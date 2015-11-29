@@ -16,11 +16,6 @@ module.exports.controller = function(app){
 		}
 	});
 
-	app.get('/patient/logout', function (req,res) {
-		req.session.destroy();
-		res.render('login.jade',{err:null}); 
-	})
-
 	app.post('/patient/find', function (request, response){
 		var date = request.body.date;   // get date via post from user
 

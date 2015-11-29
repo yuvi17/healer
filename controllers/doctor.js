@@ -16,11 +16,6 @@ module.exports.controller = function(app){
 		}
 	});
 
-	app.get('/patient/logout', function (req,res) {
-			req.session.destroy();
-			res.render('login.jade',{err:null}); 
-		});
-
 	app.post('/doctor/update', function (request , response){      // logic for form handling
 		var date = request.body.date; 
 		var slot =[];

@@ -10,6 +10,12 @@ module.exports.controller = function(app){
 		response.render('login.jade',{err:null});    // to load the login form
 	});
 
+	app.get('/logout', function (request,response){       // function to logout
+			request.session.destroy();						// session is destroyed
+			response.redirect('/login/form')      // redirect to login page.
+
+	});
+
 	app.post('/login/check', function (request, response){
 			var userType = request.body.userType;    // get the type of user
 			var email    = request.body.email;		// get the email of user
