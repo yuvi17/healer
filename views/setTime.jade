@@ -1,0 +1,48 @@
+doctype html
+html
+	include head.jade
+	link(href='/css/setTime.css', rel='stylesheet')
+	link(href='/css/default.css', rel='stylesheet')
+	link(href='/css/default.date.css', rel='stylesheet')
+	include navDoctor.jade
+	body
+		div.container.timeInputs
+			- if(message)
+				|	#{message}
+			form(action="update", method="post")
+				.input-field.col.s12
+					|	Select Date
+					br
+					i.material-icons.prefix	date_range
+					input#date.active.datepicker(type="text",name="date" )
+					label(for='date')
+				- var n =1, start = 7, end = 9;
+				while n<9
+					.input-field.col.s12
+					|	#{start%12} - #{end%12}
+					.switch
+						label
+							|	Off
+							input(type='checkbox' name="slot"+n.toString())
+							span.lever
+							|	On
+					-n++
+					-start+=2
+					-end+=2
+				br
+				br
+				br
+				button.btn.waves-effect.waves-light.center-block.z-depth-2(type='submit', name='action')
+					|	Update
+					i.material-icons.right check_circle
+	include foot.jade
+	script(src='/js/picker.js')
+	script(src='/js/picker.date.js')
+	script.
+		$(document).ready(function(){
+		$("input").click(function(){
+		$(".datepicker").pickadate({
+		min: new Date(2015,10,28)   // contains off-by-one error,report to github
+		});
+		});
+		}); //this was missing

@@ -1,0 +1,23 @@
+doctype html
+html
+	include head.jade
+	link(rel="stylesheet", href='/css/success.css')
+	include navbar.jade
+	body
+		div.container.success.teal.lighten-4.z-depth-2
+			center
+				h3 Welcome
+					- if(type)
+						|	Dr.
+						|	#{name.firstName} #{name.lastName}
+				p.text
+					|	Welcome to Healers at Home, the place one stop shop for all health services.
+					- if(type)
+						|	Here you can set your availablity for different times at different days and 
+						|	patient will be contacted as per it.
+					- if(!type)
+						|	Here you can see for different doctors available and can contact them.
+				h5.text-center
+					|	Please Login to Continue.
+				a.waves-effect.waves-light.btn(href='/login/form')	Login
+	include foot.jade 

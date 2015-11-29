@@ -1,0 +1,40 @@
+doctype html
+html
+  include head.jade
+  link(href='/css/login.css', rel='stylesheet')
+  include navbar.jade
+  body#login
+    .container.login
+      .row
+        form(action='check', method='post')
+          .row
+            - if(error)
+              p.warning
+                | #{error}
+            h5
+              center Login As
+            .col-sm-6
+              p
+                input#Doctor(name="userType", type="radio", value="doctor")
+                label(for='Doctor')
+                i.material-icons.prefix local_hospital
+                |  Doctor
+            .col-sm-6
+              p
+                input#Patient(name="userType", type="radio", value="patient")
+                label(for='Patient')
+                i.material-icons.prefix accessible
+                |  Patient
+          .input-field.col.s12
+            input#email.validate(type='email', required='required' name="email")
+            label(class="active",for='email') Email
+          .input-field.col.s12
+            input#password.validate(type='password', required='required' name="password")
+            label(class="active",for='password') Password
+          br
+          br
+          button.btn.waves-effect.waves-light.center-block.z-depth-2(type='submit', name='action')
+              | Login
+              i.material-icons.right send
+          br
+          br

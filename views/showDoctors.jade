@@ -1,0 +1,115 @@
+doctype html
+html
+	include head.jade
+	link(href='/css/view.css', rel='stylesheet')
+	include navPatient.jade
+	body
+		div.container-fluid.row.main-container
+			h4.errorMessage
+				|	#{result.date}
+			.col-xs-12.textBox.teal.darken-2.teal-darken-2
+				h5
+					|	7 A.M. - 9 A.M.
+				each value in result.slot1
+					-if(value!=null)
+						li
+							p.text
+								|	Dr. #{value.name.firstName} #{value.name.lastname}
+								br
+								|	#{value.email}
+					-else
+						p.text
+							|	No Doctors Available	
+			.col-xs-12.textBox.teal.darken-2
+				h5
+					|	9 A.M. - 11 A.M.
+				each value in result.slot2
+					-if(value!=null)
+						li
+							p.text
+								|	Dr. #{value.name.firstName} #{value.name.lastname}
+								br
+								|	#{value.email}
+					-else
+						p.text
+							|	No Doctors Available						
+			.col-xs-12.textBox.teal.darken-2
+				h5
+					|	11 A.M. - 1 P.M.
+				each value in result.slot3
+					-if(value!=null)
+						li
+							p.text
+								|	Dr. #{value.name.firstName} #{value.name.lastname}
+								br
+								|	#{value.email}
+					-else
+						p.text
+							|	No Doctors Available
+			.col-xs-12.textBox.teal.darken-2
+				h5
+				|	1 P.M. - 3 P.M.
+				each value in result.slot4
+					-if(value!=null)
+						li
+							p.text
+								|	Dr. #{value.name.firstName} #{value.name.lastname}
+								br
+								|	#{value.email}
+					-else
+						p.text
+							|	No Doctors Available
+			.col-xs-12.textBox.teal.darken-2
+				h5
+					|	3 P.M. - 5 P.M.
+				each value in result.slot5
+					-if(value!=null)
+						li
+							p.text
+								|	Dr. #{value.name.firstName} #{value.name.lastname}
+								br
+								|	#{value.email}
+					-else
+						p.text
+								|	No Doctors Available
+			.col-xs-12.textBox.teal.darken-2
+				h5
+					|	5 P.M. - 7 P.M.
+				each value in result.slot6
+					-if(value!=null)
+						li
+							p.text
+								|	Dr. #{value.name.firstName} #{value.name.lastname}
+								br
+								|	#{value.email}
+					-else
+						p.text
+							|	No Doctors Available
+			.col-xs-12.textBox.teal.darken-2
+				h5
+					|	7 P.M. - 9 P.M.
+				each value in result.slot7
+					-if(value!=null)
+						li
+							p.text
+								|	Dr. #{value.name.firstName} #{value.name.lastname}
+								br
+								|	#{value.email}
+					-else
+						p.text
+							|	No Doctors Available
+			.col-xs-12.textBox.teal.darken-2
+				h5
+					|	9 P.M. - 11 P.M.
+				each value in result.slot7
+					-if(value!=null)
+						li
+							p.text
+								|	Dr. #{value.name.firstName}  #{value.name.lastname}
+								br
+								|	#{value.email}
+					-else
+						p.text
+							|	No Doctors Available
+	include foot.jade	
+					

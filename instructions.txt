@@ -1,0 +1,8 @@
+Instructions to run
+
+1. This is made using node.js and Express.js MVC framework.
+2. Download the zip.
+3. You must have mongodb and node installed in your system.
+4. Extract the file in a folder.
+5. run " node app " for windows and " sudo nodejs app " for ubuntu from CMD in tha folder.
+6.It runs on localhost:8080.

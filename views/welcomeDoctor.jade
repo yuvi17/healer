@@ -1,0 +1,19 @@
+doctype html
+html
+	include head.jade
+	link(href='/css/welcomeDoctor.css', rel='stylesheet')
+	include navDoctor.jade
+	body
+		div.container.welcome.teal.darken-4.z-depth-2
+			h4 Welcome
+				|	Dr. #{result.name.firstName} #{result.name.lastName}
+			p.text
+				|	Welcome to Healers at Home.
+				br
+				|	Through this portal you can easliy interact with the patients 
+				|	and see them as per your convenience.You can update the timings
+				|	at which you shall be available through Healers at Home here.
+			a.waves-effect.waves-light.btn.z-depth-2(href='/doctor/setTime')
+				| Update Timings
+				i.material-icons.right  query_builder
+	include foot.jade 

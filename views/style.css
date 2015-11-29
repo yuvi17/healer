@@ -1,0 +1,12 @@
+.warning{
+	color:red;
+	font:arial;
+	font-size:20px;
+}
+
+.register{
+	background-color: #eeeeee;
+	width:50%;
+	margin-left: auto;
+	margin-right: auto;
+}
